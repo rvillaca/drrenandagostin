@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Renan Dagostin | Ginecologia e Cirurgia Ginecológica em Curitiba</title>
+    <meta name="description" content="Atendimento em ginecologia, cirurgia ginecológica, cirurgia minimamente invasiva e cirurgia robótica em Curitiba. CRM PR 40416 | RQE Nº 34036.">
+    
+    <!-- Open Graph SEO -->
+    <meta property="og:title" content="Dr. Renan Dagostin | Ginecologia e Cirurgia Ginecológica">
+    <meta property="og:description" content="Atendimento especializado com foco em segurança, acolhimento e avaliação personalizada em Curitiba.">
+    <meta property="og:image" content="avatar.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons (Lucide via CDN for lightweight usage) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* ==================== VARIABLES & RESET ==================== */
+        :root {
+            --azul-marinho: #0B1F3A;
+            --azul-profundo: #12375C;
+            --branco: #FFFFFF;
+            --cinza-claro: #F5F7FA;
+            --cinza-texto: #4A5568;
+            --dourado-suave: #C8A96A;
+            --dourado-hover: #b5985b;
+            --areia: #EFE7DA;
+            
+            --font-heading: 'Cormorant Garamond', serif;
+            --font-body: 'Montserrat', sans-serif;
+            
+            --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--cinza-texto);
+            background-color: var(--cinza-claro);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            color: var(--azul-marinho);
+            font-weight: 500;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ==================== UTILITY CLASSES ==================== */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section-padding {
+            padding: clamp(60px, 8vw, 100px) 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--azul-marinho);
+            color: var(--branco);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--azul-profundo);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .btn-accent {
+            background-color: var(--dourado-suave);
+            color: var(--branco);
+        }
+
+        .btn-accent:hover {
+            background-color: var(--dourado-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--azul-marinho);
+            color: var(--azul-marinho);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--azul-marinho);
+            color: var(--branco);
+        }
+
+        .section-header {
+            margin-bottom: clamp(40px, 5vw, 60px);
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--cinza-texto);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ==================== HEADER ==================== */
+        header {
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding: 10px 0;
+        }
+
+        .header-logo {
+            height: 100%;
+            max-height: 65px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-link {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--azul-marinho);
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--dourado-suave);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--azul-marinho);
+            cursor: pointer;
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .hero {
+            padding-top: 120px; /* Offset for fixed header */
+            background: linear-gradient(to right, var(--branco) 50%, var(--areia) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content h2 {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--dourado-suave);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            margin-bottom: 32px;
+            color: var(--cinza-texto);
+        }
+
+        .hero-crm {
+            display: inline-block;
+            background-color: var(--areia);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+            color: var(--azul-marinho);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(11, 31, 58, 0.1);
+            aspect-ratio: 4/5;
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+        }
+
+        /* ==================== ABOUT SECTION ==================== */
+        .about {
+            background-color: var(--branco);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 1/1;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-text h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            margin-bottom: 24px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .education-box {
+            background-color: var(--cinza-claro);
+            padding: 24px;
+            border-radius: 8px;
+            margin-top: 30px;
+            border-left: 4px solid var(--dourado-suave);
+        }
+
+        .education-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+        }
+
+        .education-box ul li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        .education-box ul li::before {
+            content: '•';
+            color: var(--dourado-suave);
+            position: absolute;
+            left: 0;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+        
+        .alert-text {
+            display: inline-block;
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 2px 6px;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            margin-top: 8px;
+            font-weight: bold;
+        }
+
+        /* ==================== AREAS OF PRACTICE ==================== */
+        .areas {
+            background-color: var(--cinza-claro);
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .area-card {
+            background-color: var(--branco);
+            padding: 40px 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .area-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .area-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--areia);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            color: var(--azul-marinho);
+        }
+
+        .area-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 16px;
+        }
+
+        .area-card p {
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+            color: var(--cinza-texto);
+        }
+
+        .btn-link {
+            color: var(--dourado-suave);
+            font-weight: 500;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .btn-link:hover {
+            color: var(--azul-marinho);
+        }
+
+        /* ==================== SERVICES ==================== */
+        .services {
+            background-color: var(--branco);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .service-item {
+            border-bottom: 1px solid #E2E8F0;
+            padding-bottom: 24px;
+        }
+
+        .service-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .service-item h3 i {
+            color: var(--dourado-suave);
+        }
+
+        /* ==================== WHEN TO SEEK CARE ==================== */
+        .symptoms {
+            background-color: var(--azul-marinho);
+            color: var(--branco);
+        }
+
+        .symptoms h2 {
+            color: var(--branco);
+        }
+
+        .symptoms .section-subtitle {
+            color: #A0AEC0;
+        }
+
+        .symptoms-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-top: 40px;
+        }
+
+        .symptoms-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .symptom-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .symptom-item i {
+            color: var(--dourado-suave);
+            margin-top: 4px;
+        }
+
+        .symptoms-conclusion {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-style: italic;
+        }
+
+        .symptoms-image img {
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            aspect-ratio: 4/3;
+            object-fit: cover;
+        }
+
+        /* ==================== LOCATIONS ==================== */
+        .locations {
+            background-color: var(--cinza-claro);
+        }
+
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .location-card {
+            background-color: var(--branco);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .location-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+
+        .location-address {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 24px;
+            color: var(--cinza-texto);
+        }
+
+        .location-address i {
+            color: var(--azul-marinho);
+            margin-top: 4px;
+        }
+
+        .location-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        /* ==================== CTA SECTION ==================== */
+        .cta {
+            background: linear-gradient(rgba(11, 31, 58, 0.9), rgba(11, 31, 58, 0.9)), url('assets/images/fertway.png') center/cover;
+            color: var(--branco);
+            text-align: center;
+        }
+
+        .cta h2 {
+            color: var(--branco);
+            font-size: clamp(2.2rem, 4vw, 3rem);
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        /* ==================== INSTAGRAM ==================== */
+        .instagram {
+            background-color: var(--branco);
+            text-align: center;
+        }
+
+        .insta-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin: 40px 0;
+        }
+
+        .insta-item {
+            position: relative;
+            aspect-ratio: 1/1;
+            border-radius: 8px;
+            overflow: hidden;
+            display: block;
+        }
+
+        .insta-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .insta-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(11, 31, 58, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .insta-overlay i {
+            color: var(--branco);
+            width: 32px;
+            height: 32px;
+        }
+
+        .insta-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .insta-item:hover .insta-overlay {
+            opacity: 1;
+        }
+
+        /* ==================== FOOTER ==================== */
+        footer {
+            background-color: var(--azul-marinho);
+            color: var(--branco);
+            padding: 80px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1.5fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+
+        .footer-logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+        }
+
+        .footer-info p {
+            color: #A0AEC0;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .footer-title {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: var(--dourado-suave);
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #A0AEC0;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--branco);
+        }
+
+        .ethical-notice {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #718096;
+        }
+
+        /* ==================== RESPONSIVE ==================== */
+        @media (max-width: 992px) {
+            .hero-grid, .about-grid, .symptoms-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero {
+                text-align: center;
+                background: var(--cinza-claro);
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .symptoms-list {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .insta-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                background-color: var(--branco);
+                flex-direction: column;
+                padding: 30px 24px;
+                box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+                transition: left 0.3s ease;
+                align-items: flex-start;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .btn-nav {
+                width: 100%;
+                margin-top: 10px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .location-buttons {
+                flex-direction: column;
+            }
+
+            .location-buttons .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo-box">
+                <img src="logo.png" alt="Logo Dr. Renan Dagostin" class="header-logo">
+            </a>
+            
+            <nav class="nav-links" id="nav-links">
+                <a href="#inicio" class="nav-link">Início</a>
+                <a href="#sobre" class="nav-link">Sobre</a>
+                <a href="#areas" class="nav-link">Áreas de atuação</a>
+                <a href="#servicos" class="nav-link">Serviços</a>
+                <a href="#locais" class="nav-link">Localização</a>
+                <a href="https://wa.me/5541984260054?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Renan%20Dagostin." target="_blank" class="btn btn-accent btn-nav">
+                    <i data-lucide="message-circle"></i> Agendar consulta
+                </a>
+            </nav>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section id="inicio" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content fade-in">
+                    <h2>Dr. Renan Dagostin</h2>
+                    <h1>Cuidado ginecológico especializado com abordagem moderna, ética e individualizada.</h1>
+                    <div class="hero-crm">CRM PR 40416 | RQE Nº 34036</div>
+                    <p class="hero-desc">Atendimento em ginecologia, cirurgia ginecológica minimamente invasiva e cirurgia robótica, com foco em segurança, acolhimento e avaliação personalizada.</p>
+                    <div class="hero-buttons">
+                        <a href="https://wa.me/5541984260054?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Renan%20Dagostin." target="_blank" class="btn btn-primary">
+                            Agendar consulta pelo WhatsApp
+                        </a>
+                        <a href="#areas" class="btn btn-outline">
+                            Conhecer áreas de atuação
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper fade-in">
+                    <img src="avatar.jpg" alt="Dr. Renan Dagostin - Ginecologista em Curitiba" style="object-position: top center;">
+                </div>
+            </div>
+        </section>
+
+        <!-- SOBRE -->
+        <section id="sobre" class="about section-padding">
+            <div class="container about-grid">
+                <div class="about-image fade-in">
+                    <img src="avatar.jpg" alt="Foto profissional do Dr. Renan Dagostin" style="object-position: top center;">
+                </div>
+                <div class="about-text fade-in">
+                    <h2>Sobre o Dr. Renan Dagostin</h2>
+                    <p>Dr. Renan Dagostin é médico ginecologista, com atuação em ginecologia, cirurgia ginecológica avançada, cirurgia minimamente invasiva e cirurgia robótica.</p>
+                    <p>Seu atendimento é voltado à avaliação individualizada da saúde da mulher, com foco em diagnóstico cuidadoso, orientação clara e definição da melhor conduta para cada paciente. Preza por uma abordagem humana, ética e acolhedora, compreendendo que cada caso exige uma avaliação médica minuciosa e personalizada.</p>
+                    
+                    <div class="education-box">
+                        <h3>Formação e trajetória</h3>
+                        <ul>
+                            <li>Medicina pela Pontifícia Universidade Católica do Paraná.</li>
+                            <li>Residência médica em Ginecologia e Obstetrícia pelo Hospital Nossa Senhora das Graças / Mater Dei.</li>
+                            <li>Fellowship em Cirurgia Ginecológica Minimamente Invasiva pelo Hospital Nossa Senhora das Graças.</li>
+                            <li>Atuação focada em cirurgia ginecológica e cirurgia robótica.</li>
+                        </ul>
+                        <span class="alert-text">[CONFIRMAR FORMAÇÃO ANTES DE PUBLICAR]</span>
+                    </div>
+
+                    <div style="margin-top: 30px;">
+                        <a href="https://wa.me/5541984260054?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Renan%20Dagostin." target="_blank" class="btn btn-accent">
+                            Agendar avaliação
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ÁREAS DE ATUAÇÃO -->
+        <section id="areas" class="areas section-padding">
+            <div class="container">
+                <div class="section-header text-center fade-in">
+                    <h2 class="section-title">Áreas de atuação</h2>
+                    <p class="section-subtitle">Atendimento especializado em condições ginecológicas que exigem avaliação cuidadosa, planejamento terapêutico e acompanhamento individualizado.</p>
+                </div>
+
+                <div class="areas-grid">
+                    <!-- Card 1 -->
+                    <div class="area-card fade-in">
+                        <div class="area-icon"><i data-lucide="activity"></i></div>
+                        <h3>Cirurgia Ginecológica</h3>
+                        <p>Avaliação e acompanhamento de condições ginecológicas que podem necessitar de tratamento cirúrgico, sempre com indicação individualizada.</p>
+                        <a href="https://wa.me/5541984260054" target="_blank" class="btn-link">Agendar consulta <i data-lucide="arrow-right" size="16"></i></a>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="area-card fade-in">
+                        <div class="area-icon"><i data-lucide="scissors"></i></div>
+                        <h3>Cirurgia Minimamente Invasiva</h3>
+                        <p>Abordagem cirúrgica voltada a técnicas menos invasivas, quando indicadas, buscando recuperação adequada e segurança no cuidado.</p>
+                        <a href="https://wa.me/5541984260054" target="_blank" class="btn-link">Agendar consulta <i data-lucide="arrow-right" size="16"></i></a>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="area-card fade-in">
+                        <div class="area-icon"><i data-lucide="monitor"></i></div>
+                        <h3>Cirurgia Robótica</h3>
+                        <p>Tecnologia aplicada à cirurgia ginecológica em casos selecionados, conforme avaliação médica e indicação clínica.</p>
+                        <a href="https://wa.me/5541984260054" target="_blank" class="btn-link">Agendar consulta <i data-lucide="arrow-right" size="16"></i></a>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="area-card fade-in">
+                        <div class="area-icon"><i data-lucide="flower-2"></i></div>
+                        <h3>Endometriose</h3>
+                        <p>Avaliação de sintomas como dor pélvica, cólicas intensas, dor nas relações e impacto na qualidade de vida.</p>
+                        <a href="https://wa.me/5541984260054" target="_blank" class="btn-link">Agendar consulta <i data-lucide="arrow-right" size="16"></i></a>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="area-card fade-in">
+                        <div class="area-icon"><i data-lucide="microscope"></i></div>
+                        <h3>Adenomiose</h3>
+                        <p>Investigação e acompanhamento de alterações uterinas associadas a dor, sangramento aumentado e desconforto pélvico.</p>
+                        <a href="https://wa.me/5541984260054" target="_blank" class="btn-link">Agendar consulta <i data-lucide="arrow-right" size="16"></i></a>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="area-card fade-in">
+                        <div class="area-icon"><i data-lucide="circle-dashed"></i></div>
+                        <h3>Miomas Uterinos</h3>
+                        <p>Avaliação de miomas, sangramento uterino aumentado, dor pélvica e definição da melhor conduta para cada caso.</p>
+                        <a href="https://wa.me/5541984260054" target="_blank" class="btn-link">Agendar consulta <i data-lucide="arrow-right" size="16"></i></a>
+                    </div>
+                    <!-- Card 7 -->
+                    <div class="area-card fade-in">
+                        <div class="area-icon"><i data-lucide="focus"></i></div>
+                        <h3>Cistos Ovarianos</h3>
+                        <p>Acompanhamento e investigação de alterações ovarianas, considerando sintomas, exames de imagem e contexto clínico.</p>
+                        <a href="https://wa.me/5541984260054" target="_blank" class="btn-link">Agendar consulta <i data-lucide="arrow-right" size="16"></i></a>
+                    </div>
+                    <!-- Card 8 -->
+                    <div class="area-card fade-in">
+                        <div class="area-icon"><i data-lucide="heart-pulse"></i></div>
+                        <h3>Dor Pélvica</h3>
+                        <p>Avaliação médica especializada para identificar possíveis causas ginecológicas e orientar o tratamento adequado.</p>
+                        <a href="https://wa.me/5541984260054" target="_blank" class="btn-link">Agendar consulta <i data-lucide="arrow-right" size="16"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVIÇOS -->
+        <section id="servicos" class="services section-padding">
+            <div class="container">
+                <div class="section-header text-center fade-in">
+                    <h2 class="section-title">Serviços</h2>
+                    <p class="section-subtitle">Atendimento focado em acolhimento, diagnóstico preciso e plano de cuidado individualizado para a saúde da mulher.</p>
+                </div>
+
+                <div class="services-grid">
+                    <div class="service-item fade-in">
+                        <h3><i data-lucide="stethoscope"></i> Consulta Ginecológica</h3>
+                        <p>Avaliação clínica individualizada, com escuta atenta, exame físico detalhado quando indicado e orientação personalizada.</p>
+                    </div>
+                    <div class="service-item fade-in">
+                        <h3><i data-lucide="file-check"></i> Avaliação para Cirurgia</h3>
+                        <p>Análise aprofundada do quadro clínico, exames e possibilidades terapêuticas para definir de forma segura a melhor conduta cirúrgica.</p>
+                    </div>
+                    <div class="service-item fade-in">
+                        <h3><i data-lucide="video"></i> Teleconsulta</h3>
+                        <p>Atendimento remoto para orientações preliminares, retorno de exames e acompanhamento, quando clinicamente apropriado.</p>
+                    </div>
+                    <div class="service-item fade-in">
+                        <h3><i data-lucide="clipboard-list"></i> Acompanhamento Clínico</h3>
+                        <p>Seguimento rigoroso de condições ginecológicas crônicas ou que exigem monitoramento e cuidado contínuo da saúde íntima.</p>
+                    </div>
+                    <div class="service-item fade-in">
+                        <h3><i data-lucide="shield-check"></i> Orientação Preventiva</h3>
+                        <p>Informações e diretrizes sobre prevenção, rastreamento de doenças, saúde íntima e cuidados ginecológicos essenciais.</p>
+                    </div>
+                    <div class="service-item fade-in">
+                        <h3><i data-lucide="users"></i> Segunda Opinião Médica</h3>
+                        <p>Avaliação técnica de casos já investigados ou com indicação de procedimento prévia, auxiliando na clareza e segurança das decisões.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUANDO PROCURAR -->
+        <section class="symptoms section-padding">
+            <div class="container symptoms-grid">
+                <div class="symptoms-text fade-in">
+                    <h2>Quando procurar avaliação ginecológica?</h2>
+                    <p class="section-subtitle" style="margin: 0 0 30px 0;">Alguns sintomas merecem atenção especializada e devem ser avaliados por um médico ginecologista, especialmente quando são persistentes, recorrentes ou interferem diretamente na sua qualidade de vida.</p>
+                    
+                    <div class="symptoms-list">
+                        <div class="symptom-item">
+                            <i data-lucide="check-circle-2"></i>
+                            <span>Dor pélvica persistente</span>
+                        </div>
+                        <div class="symptom-item">
+                            <i data-lucide="check-circle-2"></i>
+                            <span>Cólicas intensas</span>
+                        </div>
+                        <div class="symptom-item">
+                            <i data-lucide="check-circle-2"></i>
+                            <span>Sangramento irregular ou aumentado</span>
+                        </div>
+                        <div class="symptom-item">
+                            <i data-lucide="check-circle-2"></i>
+                            <span>Dor durante relações sexuais</span>
+                        </div>
+                        <div class="symptom-item">
+                            <i data-lucide="check-circle-2"></i>
+                            <span>Suspeita de endometriose</span>
+                        </div>
+                        <div class="symptom-item">
+                            <i data-lucide="check-circle-2"></i>
+                            <span>Miomas ou cistos ovarianos</span>
+                        </div>
+                        <div class="symptom-item">
+                            <i data-lucide="check-circle-2"></i>
+                            <span>Desconforto pélvico recorrente</span>
+                        </div>
+                        <div class="symptom-item">
+                            <i data-lucide="check-circle-2"></i>
+                            <span>Dúvidas sobre indicação cirúrgica</span>
+                        </div>
+                    </div>
+
+                    <p class="symptoms-conclusion">A avaliação médica é essencial para compreender o quadro clínico, definir o diagnóstico correto e indicar a conduta terapêutica mais adequada e segura para cada paciente.</p>
+                    
+                    <a href="https://wa.me/5541984260054" target="_blank" class="btn btn-accent" style="margin-top: 24px;">
+                        Agendar consulta pelo WhatsApp
+                    </a>
+                </div>
+                <div class="symptoms-image fade-in">
+                    <img src="assets/images/fertway.png" alt="Imagem da clinica Fertway">
+                </div>
+            </div>
+        </section>
+
+        <!-- LOCAIS -->
+        <section id="locais" class="locations section-padding">
+            <div class="container">
+                <div class="section-header text-center fade-in">
+                    <h2 class="section-title">Locais de atendimento</h2>
+                    <p class="section-subtitle">Consultórios localizados em pontos estratégicos de Curitiba, com infraestrutura completa para seu conforto e segurança.</p>
+                </div>
+
+                <div class="locations-grid">
+                    <!-- Local 1 -->
+                    <div class="location-card fade-in">
+                        <h3>Fertway — Reprodução Humana</h3>
+                        <div class="location-address">
+                            <i data-lucide="map-pin"></i>
+                            <p>Rua Benjamin Lins, 774<br>Batel, Curitiba — PR<br>CEP: 80420-100</p>
+                        </div>
+                        <div class="location-buttons">
+                            <a href="https://maps.google.com/?q=Rua+Benjamin+Lins,+774,+Batel,+Curitiba" target="_blank" class="btn btn-outline">Ver rota</a>
+                            <a href="https://wa.me/5541984260054" target="_blank" class="btn btn-primary">Agendar consulta</a>
+                        </div>
+                    </div>
+
+                    <!-- Local 2 -->
+                    <div class="location-card fade-in">
+                        <h3>Clínica Dagostin</h3>
+                        <p style="font-size: 0.85rem; color: var(--dourado-suave); margin-bottom: 12px; font-weight: 500;">Cirurgia Ginecológica Avançada e Bem Estar</p>
+                        <div class="location-address">
+                            <i data-lucide="map-pin"></i>
+                            <div>
+                                <p>Avenida República Argentina<br>Água Verde, Curitiba — PR<br>CEP: 80620-010</p>
+                                <span class="alert-text">[CONFIRMAR NÚMERO EXATO ANTES DE PUBLICAR]</span>
+                            </div>
+                        </div>
+                        <div class="location-buttons">
+                            <a href="https://maps.google.com/?q=Avenida+Republica+Argentina,+Agua+Verde,+Curitiba" target="_blank" class="btn btn-outline">Ver rota</a>
+                            <a href="https://wa.me/5541984260054" target="_blank" class="btn btn-primary">Agendar consulta</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section class="cta section-padding">
+            <div class="container fade-in">
+                <h2>Agende sua consulta</h2>
+                <p>Para agendar uma avaliação, confirmar disponibilidade de horários ou obter mais informações sobre os atendimentos, clique no botão abaixo e fale com a nossa equipe diretamente pelo WhatsApp.</p>
+                <a href="https://wa.me/5541984260054?text=Ol%C3%A1%21%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta%20com%20o%20Dr.%20Renan%20Dagostin." target="_blank" class="btn btn-accent" style="font-size: 1.1rem; padding: 18px 36px;">
+                    <i data-lucide="message-circle"></i> Agendar pelo WhatsApp
+                </a>
+            </div>
+        </section>
+
+        <!-- INSTAGRAM -->
+        <section class="instagram section-padding">
+            <div class="container">
+                <div class="section-header text-center fade-in">
+                    <h2 class="section-title">Acompanhe no Instagram</h2>
+                    <p class="section-subtitle">Veja conteúdos educativos, orientações sobre saúde ginecológica, cirurgia ginecológica avançada e cuidados preventivos.</p>
+                </div>
+                
+                <div class="insta-grid fade-in">
+                    <a href="https://www.instagram.com/dr.renandagostin/" target="_blank" class="insta-item">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=400" alt="Post Instagram sobre Endometriose">
+                        <div class="insta-overlay"><i data-lucide="instagram"></i></div>
+                    </a>
+                    <a href="https://www.instagram.com/dr.renandagostin/" target="_blank" class="insta-item">
+                        <img src="https://images.unsplash.com/photo-1551076805-e1869043e560?auto=format&fit=crop&q=80&w=400" alt="Post Instagram sobre Cirurgia Robótica">
+                        <div class="insta-overlay"><i data-lucide="instagram"></i></div>
+                    </a>
+                    <a href="https://www.instagram.com/dr.renandagostin/" target="_blank" class="insta-item">
+                        <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=400" alt="Post Instagram sobre Miomas">
+                        <div class="insta-overlay"><i data-lucide="instagram"></i></div>
+                    </a>
+                    <a href="https://www.instagram.com/dr.renandagostin/" target="_blank" class="insta-item">
+                        <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=400" alt="Post Instagram Prevenção">
+                        <div class="insta-overlay"><i data-lucide="instagram"></i></div>
+                    </a>
+                </div>
+
+                <a href="https://www.instagram.com/dr.renandagostin/" target="_blank" class="btn btn-outline fade-in">
+                    <i data-lucide="instagram"></i> Ver Instagram
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <div class="footer-logo">Dr. Renan Dagostin</div>
+                    <p>Ginecologia e Obstetrícia</p>
+                    <p>CRM PR 40416 | RQE Nº 34036</p>
+                    <p>Curitiba — PR</p>
+                    <br>
+                    <p><i data-lucide="phone" size="14"></i> WhatsApp: (41) 98426-0054</p>
+                    <p><i data-lucide="instagram" size="14"></i> @dr.renandagostin</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-title">Links Rápidos</div>
+                    <ul>
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#sobre">Sobre o Médico</a></li>
+                        <li><a href="#areas">Áreas de Atuação</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#locais">Localização</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-address">
+                    <div class="footer-title">Endereços</div>
+                    <div style="margin-bottom: 16px;">
+                        <p style="color: white; font-weight: 500;">Fertway — Reprodução Humana</p>
+                        <p style="color: #A0AEC0; font-size: 0.9rem;">Rua Benjamin Lins, 774, Batel<br>Curitiba — PR</p>
+                    </div>
+                    <div>
+                        <p style="color: white; font-weight: 500;">Clínica Dagostin</p>
+                        <p style="color: #A0AEC0; font-size: 0.9rem;">Avenida República Argentina, Água Verde<br>Curitiba — PR <br><span class="alert-text" style="color: black;">[CONFIRMAR NÚMERO EXATO ANTES DE PUBLICAR]</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ethical-notice">
+                <p>As informações deste site têm caráter educativo e institucional, não substituindo, em hipótese alguma, uma consulta médica presencial. O diagnóstico clínico e a indicação de tratamento ou cirurgia dependem de avaliação médica individualizada. Material em conformidade com as normas do CFM e CODAME.</p>
+                <p style="margin-top: 10px;">&copy; 2024 Dr. Renan Dagostin. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Inicializar ícones da biblioteca Lucide
+        lucide.createIcons();
+
+        // Menu Mobile Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+        const menuLinks = document.querySelectorAll('.nav-link');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Fechar menu ao clicar em um link (mobile)
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+
+        // Scroll suave para links de navegação para compensar o header fixo
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+  
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer para animações de fade-in ao rolar a página
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Opcional: parar de observar após a animação acontecer uma vez
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
