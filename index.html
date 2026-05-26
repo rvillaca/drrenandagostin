@@ -594,52 +594,24 @@
 
         .insta-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
             margin: 40px 0;
         }
 
-        .insta-item {
-            position: relative;
-            aspect-ratio: 1/1;
-            border-radius: 8px;
+        .insta-embed {
+            background-color: var(--branco);
+            border-radius: 16px;
             overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(11, 31, 58, 0.08);
+        }
+
+        .insta-embed iframe {
             display: block;
-        }
-
-        .insta-item img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .insta-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(11, 31, 58, 0.6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .insta-overlay i {
-            color: var(--branco);
-            width: 32px;
-            height: 32px;
-        }
-
-        .insta-item:hover img {
-            transform: scale(1.05);
-        }
-
-        .insta-item:hover .insta-overlay {
-            opacity: 1;
+            min-height: 720px;
+            border: 0;
         }
 
         /* ==================== FOOTER ==================== */
@@ -721,9 +693,6 @@
                 grid-template-columns: 1fr 1fr;
             }
             
-            .insta-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
         }
 
         @media (max-width: 768px) {
@@ -764,6 +733,14 @@
 
             .location-buttons .btn {
                 width: 100%;
+            }
+
+            .insta-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .insta-embed iframe {
+                min-height: 680px;
             }
         }
     </style>
@@ -1067,30 +1044,42 @@
             <div class="container">
                 <div class="section-header text-center fade-in">
                     <h2 class="section-title">Acompanhe no Instagram</h2>
-                    <p class="section-subtitle">Veja conteúdos educativos, orientações sobre saúde ginecológica, cirurgia ginecológica avançada e cuidados preventivos.</p>
+                    <p class="section-subtitle">Veja os posts publicados no perfil do Dr. Renan Dagostin diretamente do Instagram.</p>
                 </div>
                 
                 <div class="insta-grid fade-in">
-                    <a href="https://www.instagram.com/dr.renandagostin/" target="_blank" class="insta-item">
-                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=400" alt="Post Instagram sobre Endometriose">
-                        <div class="insta-overlay"><i data-lucide="instagram"></i></div>
-                    </a>
-                    <a href="https://www.instagram.com/dr.renandagostin/" target="_blank" class="insta-item">
-                        <img src="https://images.unsplash.com/photo-1551076805-e1869043e560?auto=format&fit=crop&q=80&w=400" alt="Post Instagram sobre Cirurgia Robótica">
-                        <div class="insta-overlay"><i data-lucide="instagram"></i></div>
-                    </a>
-                    <a href="https://www.instagram.com/dr.renandagostin/" target="_blank" class="insta-item">
-                        <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&q=80&w=400" alt="Post Instagram sobre Miomas">
-                        <div class="insta-overlay"><i data-lucide="instagram"></i></div>
-                    </a>
-                    <a href="https://www.instagram.com/dr.renandagostin/" target="_blank" class="insta-item">
-                        <img src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&q=80&w=400" alt="Post Instagram Prevenção">
-                        <div class="insta-overlay"><i data-lucide="instagram"></i></div>
-                    </a>
+                    <div class="insta-embed">
+                        <iframe
+                            src="https://www.instagram.com/p/DTaJVwFDg3T/embed"
+                            loading="lazy"
+                            allowtransparency="true"
+                            title="Post do Instagram do Dr. Renan Dagostin 1"></iframe>
+                    </div>
+                    <div class="insta-embed">
+                        <iframe
+                            src="https://www.instagram.com/p/DXDWftuDomU/embed"
+                            loading="lazy"
+                            allowtransparency="true"
+                            title="Post do Instagram do Dr. Renan Dagostin 2"></iframe>
+                    </div>
+                    <div class="insta-embed">
+                        <iframe
+                            src="https://www.instagram.com/p/DWFEYsujtjD/embed"
+                            loading="lazy"
+                            allowtransparency="true"
+                            title="Post do Instagram do Dr. Renan Dagostin 3"></iframe>
+                    </div>
+                    <div class="insta-embed">
+                        <iframe
+                            src="https://www.instagram.com/p/DVoiYFfjj_E/embed"
+                            loading="lazy"
+                            allowtransparency="true"
+                            title="Post do Instagram do Dr. Renan Dagostin 4"></iframe>
+                    </div>
                 </div>
 
                 <a href="https://www.instagram.com/dr.renandagostin/" target="_blank" class="btn btn-outline fade-in">
-                    <i data-lucide="instagram"></i> Ver Instagram
+                    <i data-lucide="instagram"></i> Ver perfil no Instagram
                 </a>
             </div>
         </section>
